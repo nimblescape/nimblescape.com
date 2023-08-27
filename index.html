@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="nimblescape-icon.png" type="image/x-icon">
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: white;
+  }
+
+  .graphic-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+  }
+
+  .graphic {
+    max-width: 70%;
+    max-height: 70%;
+    opacity: 0; /* Initially invisible */
+    animation: fade-in 2s forwards; /* Animation duration and fill mode */
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .footer {
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    font-size: 12px;
+    color: #5e5e5e;
+    text-align: center;
+    margin-bottom: 800px;
+    visibility: hidden;
+    animation: appear 0s ease 1s forwards;
+  }
+
+  @keyframes appear {
+    to {
+      visibility: visible;
+    }
+  }
+</style>
+<title>nimblescape</title>
+<script type="text/javascript">
+
+  const footerKey   = "9?$%=§4!§ssxS45ds!!."          // random generated text with lenght the "footer text to be shown"
+  const footerText = "UFFCSn3JXUzFHxYLMFVFAV1CTkM="   // hex64 coded xored key bota(xorString(footerKey, "footer text to be shown"))
+  
+  function xorStrings(str1, str2) {
+    let result = '';
+    const maxLength = Math.max(str1.length, str2.length);
+
+    for (let i = 0; i < maxLength; i++) {
+      const charCode1 = str1.charCodeAt(i) || 0;
+      const charCode2 = str2.charCodeAt(i) || 0;
+
+      const xorResult = charCode1 ^ charCode2;
+      result += String.fromCharCode(xorResult);
+    }
+
+    return result;
+  }
+
+  function showFooter() {
+    document.getElementById("footer").innerHTML = xorStrings(footerKey, atob(footerText));
+  }
+  
+</script>
+</head>
+<body onload="showFooter()">
+  </script>
+  <div class="graphic-container">
+    <img class="graphic" src="images/nimblescape-logo.pdf" alt="nimblescape">
+  </div>
+  <div class="footer" id="footer"></div>
+</body>
+</html>
