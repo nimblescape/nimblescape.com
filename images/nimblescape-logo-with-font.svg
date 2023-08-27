@@ -15,7 +15,7 @@
     <style type="text/css">
       @font-face {
         font-family: "nimblescape-logo";
-        src: url("../fonts/nimblescape-logo.woff") format("woff");
+        src: url("nimblescape-logo.woff") format("woff");
         font-weight: normal;
         font-style: normal;
       }
