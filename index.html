@@ -28,13 +28,20 @@
     }
 
     .footer {
-      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-family: "nimblescape-text", Arial, sans-serif;
       font-size: 1.5vw;
       color: #5e5e5e;
       text-align: center;
       margin-top: 3vw;
       opacity: 0;
       animation: fade-in 3s forwards;
+    }
+
+    @font-face {
+      font-family: "nimblescape-text";
+      font-style: normal;
+      font-weight: 400;
+      src: url(fonts/nimblescape-text.woff) format('woff');
     }
 
     @keyframes fade-in {
@@ -71,7 +78,7 @@
 
 <body onload="init()">
   <div class="container">
-    <img class="image" src="images/nimblescape-logo.svg" alt="Centered Graphic">
+    <img class="image" src="images/nimblescape-logo-with-font.svg" alt="Centered Graphic">
     <div class="footer" id="footer">text</div>
   </div>
 </body>
