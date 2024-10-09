@@ -51,7 +51,7 @@
       animation: fade-in 3s forwards;
     }
 
-    .footer {
+    .contact {
       font-family: "nimblescape-text", Arial, sans-serif;
       font-size: 2vw;
       color: #5e5e5e;
@@ -60,12 +60,22 @@
       opacity: 0;
       animation: fade-in 3s forwards;
     }
+
+    .footer {
+      font-family: "nimblescape-text", Arial, sans-serif;
+      font-size: 0.8vw;
+      color: #5e5e5e;
+      text-align: center;
+      margin-top: 20vw;
+      opacity: 0;
+      animation: fade-in 3s forwards;
+    }
   </style>
   <title>nimblescape</title>
   <script type="text/javascript">
 
-    const footerKey = "9?$%=§4!§ssxS45ds!!."            // random generated text with lenght the "footer text to be shown"
-    const footerText = "UFFCSn3JXUzFHxYLMFVFAV1CTkM="   // hex64 coded xored key bota(xorString(footerKey, "footer text to be shown"))
+    const contactKey = "9?$%=§4!§ssxS45ds!!."            // random generated text with lenght the "footer text to be shown"
+    const contactText = "UFFCSn3JXUzFHxYLMFVFAV1CTkM="   // hex64 coded xored key bota(xorString(footerKey, "footer text to be shown"))
     function xorStrings(str1, str2) {
       let result = '';
       const maxLength = Math.max(str1.length, str2.length);
@@ -78,7 +88,7 @@
       return result;
     }
     function init() {
-      document.getElementById("footer").innerHTML = xorStrings(footerKey, atob(footerText));
+      document.getElementById("contact").innerHTML = xorStrings(contactKey, atob(contactText));
     }
   </script>
 </head>
@@ -189,7 +199,13 @@
       </g>
     </svg>
 
-    <div class="footer" id="footer">text</div>
+    <div class="contact" id="contact">
+      text
+    </div>
+
+    <div class="footer">
+      nimblescape e.U. | Schwarzen 92 | 6867 Schwarzenberg | AUSTRIA | FN 618434 m, Landesgericht Feldkirch
+    </div>
 
   </div>
 </body>
